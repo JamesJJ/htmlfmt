@@ -76,6 +76,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	gohtml.InlineTagMaxLength = 120
+	gohtml.Condense = true
 	result := gohtml.Format(data)
 	if file != nil {
 		file.Write([]byte(result))
